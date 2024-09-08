@@ -10,6 +10,8 @@ import SwiftData
 
 struct ContentView: View {
     @StateObject private var viewModel = LocationViewModel()
+    
+    @State private var isAddPlaceViewPresented: Bool = false
 
     var body: some View {
         NavigationStack {
@@ -31,8 +33,20 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Places")
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button {
+                        isAddPlaceViewPresented = true
+                    } label: {
+                        Label("Add place", systemImage: "plus")
+                    }
+                }
+            }
             .onAppear {
                 viewModel.fetchLocations()
+            }
+            .sheet(isPresented: $isAddPlaceViewPresented) {
+                AddPlaceView()
             }
             .alert(item: $viewModel.errorWrapper) { errorWrapper in
                 Alert(title: Text("Error"), message: Text(errorWrapper.message), dismissButton: .default(Text("OK")))
