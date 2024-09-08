@@ -26,7 +26,7 @@ class LocationModelTests: XCTestCase {
         // When
         let decoder = JSONDecoder()
         do {
-            let response = try decoder.decode(LocationsModel.self, from: jsonData)
+            let response = try decoder.decode(LocationsResponseModel.self, from: jsonData)
             
             // Then
             XCTAssertEqual(response.locations.count, 1)
@@ -54,7 +54,7 @@ class LocationModelTests: XCTestCase {
         // When
         let decoder = JSONDecoder()
         do {
-            let response = try decoder.decode(LocationsModel.self, from: jsonData)
+            let response = try decoder.decode(LocationsResponseModel.self, from: jsonData)
             
             // Then
             XCTAssertEqual(response.locations.count, 1)

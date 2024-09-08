@@ -8,9 +8,9 @@
 import Foundation
 
 class MockLocationService: LocationService {
-    var result: Result<LocationsModel, Error>?
+    var result: Result<LocationsResponseModel, Error>?
     
-    override func fetchLocations(completion: @escaping (Result<LocationsModel, Error>) -> Void) {
+    override func fetchLocations(completion: @escaping (Result<LocationsResponseModel, Error>) -> Void) {
         if let result = result {
             completion(result)
         }

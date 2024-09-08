@@ -14,7 +14,7 @@ class LocationService {
         self.session = session
     }
     
-    func fetchLocations(completion: @escaping (Result<LocationsModel, Error>) -> Void) {
+    func fetchLocations(completion: @escaping (Result<LocationsResponseModel, Error>) -> Void) {
         let urlString = "https://raw.githubusercontent.com/abnamrocoesd/assignment-ios/main/locations.json"
         
         guard let url = URL(string: urlString) else {
@@ -37,7 +37,7 @@ class LocationService {
             // Decode the fetched data using the JSONDecoder
             do {
                 let decoder = JSONDecoder()
-                let locationsResponse = try decoder.decode(LocationsModel.self, from: data)
+                let locationsResponse = try decoder.decode(LocationsResponseModel.self, from: data)
                 completion(.success(locationsResponse))
             } catch {
                 completion(.failure(error))

@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  PlacesView.swift
 //  Places
 //
 //  Created by Dennis van Oosten on 05/09/2024.
@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct ContentView: View {
+struct PlacesView: View {
     @StateObject private var viewModel = LocationViewModel()
     @Query private var storedLocations: [LocationModel]
     
@@ -58,5 +58,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    PlacesView()
 }

@@ -11,7 +11,7 @@
 		9559E6A12C8E167700AE9C9B /* AddLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9559E6A02C8E167700AE9C9B /* AddLocationView.swift */; };
 		9559E6DC2C8E37C800AE9C9B /* LocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9559E6DB2C8E37C800AE9C9B /* LocationButton.swift */; };
 		9570024A2C89EAC50067E000 /* PlacesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957002492C89EAC50067E000 /* PlacesApp.swift */; };
-		9570024C2C89EAC50067E000 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9570024B2C89EAC50067E000 /* ContentView.swift */; };
+		9570024C2C89EAC50067E000 /* PlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9570024B2C89EAC50067E000 /* PlacesView.swift */; };
 		957002762C89ED840067E000 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957002752C89ED840067E000 /* LocationModel.swift */; };
 		957002782C89FFAF0067E000 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957002772C89FFAF0067E000 /* LocationViewModel.swift */; };
 		9570027A2C8A014B0067E000 /* ErrorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957002792C8A014B0067E000 /* ErrorWrapper.swift */; };
@@ -20,7 +20,7 @@
 		957002862C8A20690067E000 /* MockLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957002852C8A20690067E000 /* MockLocationService.swift */; };
 		957002882C8A20D10067E000 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957002872C8A20D10067E000 /* LocationService.swift */; };
 		9570028F2C8A2CDF0067E000 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9570028E2C8A2CDF0067E000 /* NetworkError.swift */; };
-		957002912C8A2F5B0067E000 /* LocationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957002902C8A2F5B0067E000 /* LocationsModel.swift */; };
+		957002912C8A2F5B0067E000 /* LocationsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957002902C8A2F5B0067E000 /* LocationsResponseModel.swift */; };
 		957002932C8A320F0067E000 /* LocationModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957002922C8A320F0067E000 /* LocationModelTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,7 +41,7 @@
 		9559E6DB2C8E37C800AE9C9B /* LocationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationButton.swift; sourceTree = "<group>"; };
 		957002462C89EAC50067E000 /* Places.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Places.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		957002492C89EAC50067E000 /* PlacesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesApp.swift; sourceTree = "<group>"; };
-		9570024B2C89EAC50067E000 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9570024B2C89EAC50067E000 /* PlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesView.swift; sourceTree = "<group>"; };
 		957002582C89EAC60067E000 /* PlacesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlacesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		957002752C89ED840067E000 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		957002772C89FFAF0067E000 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
@@ -51,7 +51,7 @@
 		957002852C8A20690067E000 /* MockLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationService.swift; sourceTree = "<group>"; };
 		957002872C8A20D10067E000 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		9570028E2C8A2CDF0067E000 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		957002902C8A2F5B0067E000 /* LocationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsModel.swift; sourceTree = "<group>"; };
+		957002902C8A2F5B0067E000 /* LocationsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsResponseModel.swift; sourceTree = "<group>"; };
 		957002922C8A320F0067E000 /* LocationModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,7 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				957002752C89ED840067E000 /* LocationModel.swift */,
-				957002902C8A2F5B0067E000 /* LocationsModel.swift */,
+				957002902C8A2F5B0067E000 /* LocationsResponseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -146,7 +146,7 @@
 		9570027E2C8A06C70067E000 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9570024B2C89EAC50067E000 /* ContentView.swift */,
+				9570024B2C89EAC50067E000 /* PlacesView.swift */,
 				9559E6DB2C8E37C800AE9C9B /* LocationButton.swift */,
 				9559E6A02C8E167700AE9C9B /* AddLocationView.swift */,
 			);
@@ -278,11 +278,11 @@
 			files = (
 				9559E6DC2C8E37C800AE9C9B /* LocationButton.swift in Sources */,
 				957002862C8A20690067E000 /* MockLocationService.swift in Sources */,
-				9570024C2C89EAC50067E000 /* ContentView.swift in Sources */,
+				9570024C2C89EAC50067E000 /* PlacesView.swift in Sources */,
 				957002882C8A20D10067E000 /* LocationService.swift in Sources */,
 				9570024A2C89EAC50067E000 /* PlacesApp.swift in Sources */,
 				9559E6A12C8E167700AE9C9B /* AddLocationView.swift in Sources */,
-				957002912C8A2F5B0067E000 /* LocationsModel.swift in Sources */,
+				957002912C8A2F5B0067E000 /* LocationsResponseModel.swift in Sources */,
 				957002762C89ED840067E000 /* LocationModel.swift in Sources */,
 				9570028F2C8A2CDF0067E000 /* NetworkError.swift in Sources */,
 				9559E69F2C8E038D00AE9C9B /* WikipediaService.swift in Sources */,

@@ -32,7 +32,7 @@ class LocationViewModelTests: XCTestCase {
             LocationModel(name: "Copenhagen", lat: 55.6713442, long: 12.523785),
             LocationModel(name: nil, lat: 40.4380638, long: -3.7495758)
         ]
-        let response = LocationsModel(locations: sampleLocations)
+        let response = LocationsResponseModel(locations: sampleLocations)
         mockService.result = .success(response)
         
         let expectation = XCTestExpectation(description: "Fetch locations succeeds")
@@ -52,7 +52,7 @@ class LocationViewModelTests: XCTestCase {
     
     func testFetchLocationsNoDataReceived() throws {
         // Given
-        mockService.result = .success(LocationsModel(locations: []))
+        mockService.result = .success(LocationsResponseModel(locations: []))
         
         let expectation = XCTestExpectation(description: "Fetch locations succeeds with no data received")
         
