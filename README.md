@@ -11,18 +11,18 @@ There are two screens:
 
 The deep links to the Wikipedia app use the following structure:
 
-'''wikipedia://places?WMFLatitude=[lat]&WMFLongitude=[long]'''
+`wikipedia://places?WMFLatitude=[lat]&WMFLongitude=[long]`
 
 An example:
 
-'''
-wikipedia://places?WMFLatitude=52.3547498&WMFLongitude=4.8339215
-'''
+`wikipedia://places?WMFLatitude=52.3547498&WMFLongitude=4.8339215`
 
 To make sure the deep links work with the Wikipedia app, I've made the following changes:
 
-1. In *NSUserActivity+WMFExtensions* I added a new method to capture the latitude and longitude parameters from the URL:
-'''
+### 1. Update *NSUserActivity+WMFExtensions* 
+I added a new method to capture the latitude and longitude parameters from the URL:
+
+```objc
 + (instancetype)wmf_placesActivityWithCoordinates:(NSURL *)activityCoordinates {
     NSURLComponents *components = [NSURLComponents componentsWithURL:activityCoordinates resolvingAgainstBaseURL:NO];
     double latitude = 0.0;
@@ -38,10 +38,11 @@ To make sure the deep links work with the Wikipedia app, I've made the following
     NSUserActivity *activity = [self wmf_pageActivityWithNameAndCoordinates:@"Places" latitude:latitude longitude:longitude];
     return activity;
 }
-'''
+```
 
 And another method to create an NSUserActivity:
-'''
+
+```objc
 + (instancetype)wmf_pageActivityWithNameAndCoordinates:(NSString *)pageName latitude:(double)latitude longitude:(double)longitude {
     NSUserActivity *activity = [self wmf_activityWithType:[pageName lowercaseString]];
     activity.title = wmf_localizationNotNeeded(pageName);
@@ -58,20 +59,15 @@ And another method to create an NSUserActivity:
 
     return activity;
 }
-'''
+```
 
 I also changed 
-'''
-return [self wmf_placesActivityWithURL:url];
-'''
-to
-'''
-return [self wmf_placesActivityWithCoordinates:url];
-'''
-to make use of the new method
+`return [self wmf_placesActivityWithURL:url];` to. `return [self wmf_placesActivityWithCoordinates:url];` to make use of the new method.
 
-2. In *WMFAppViewController*, I changed the *WMFUserActivityTypePlaces* case (l1202) to the following:
-'''
+### 2. Update *WMFAppViewController*
+I changed the code inside the *WMFUserActivityTypePlaces* switch case (line 1202) to the following:
+
+```objc
 [self dismissPresentedViewControllers];
 [self setSelectedIndex:WMFAppTabTypePlaces];
 [self.currentTabNavigationController popToRootViewControllerAnimated:animated];
@@ -82,11 +78,14 @@ if (latitude && longitude) {
     [[self placesViewController] updateViewModeToMap];
     [[self placesViewController] showCoordinateURLWithLatitude:latitude longitude:longitude];
 }
-'''
+```
+
 This way it uses the new activity to view the correct location on the map.
 
-3. Lastly, in *PlacesViewController* I added these functions to make sure the view controller is able to handle a request using coordinates and react accordingly:
-'''
+### 3. Update *PlacesViewController* 
+I added these functions to make sure the view controller is able to handle a request using coordinates and react accordingly:
+
+```objc
 @objc public func showCoordinateURL(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
     let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     let region = self.region(thatFits: coordinates)
@@ -97,4 +96,6 @@ func region(thatFits coordinates: CLLocationCoordinate2D) -> MKCoordinateRegion 
     let initialRegion = [coordinates].wmf_boundingRegion(with: 50)
     return [coordinates].wmf_boundingRegion(with: 0.25 * initialRegion.width)
 }
-'''
+```
+
+
