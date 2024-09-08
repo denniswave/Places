@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct LocationsModel: Codable {
+struct LocationsModel: Decodable {
     let locations: [LocationModel]
 }

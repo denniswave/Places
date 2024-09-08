@@ -10,24 +10,45 @@ import SwiftData
 
 struct ContentView: View {
     @StateObject private var viewModel = LocationViewModel()
+    @Query private var storedLocations: [LocationModel]
     
     @State private var isAddPlaceViewPresented: Bool = false
 
     var body: some View {
         NavigationStack {
             List {
-                ForEach(viewModel.locations) { location in
-                    Button {
-                        WikipediaService().openWikipedia(onLatitude: location.lat, longitude: location.long)
-                    } label: {
-                        VStack(alignment: .leading) {
-                            Text(location.name ?? "Unknown")
-                                .font(.headline)
-                            HStack {
-                                Text("\(location.lat)")
-                                Text("\(location.long)")
+                Section {
+                    ForEach(viewModel.locations) { location in
+                        Button {
+                            WikipediaService().openWikipedia(onLatitude: location.lat, longitude: location.long)
+                        } label: {
+                            VStack(alignment: .leading) {
+                                Text(location.name ?? "Unknown")
+                                    .font(.headline)
+                                HStack {
+                                    Text("\(location.lat)")
+                                    Text("\(location.long)")
+                                }
+                                .font(.subheadline)
                             }
-                            .font(.subheadline)
+                        }
+                    }
+                }
+                
+                Section("My places") {
+                    ForEach(storedLocations) { location in
+                        Button {
+                            WikipediaService().openWikipedia(onLatitude: location.lat, longitude: location.long)
+                        } label: {
+                            VStack(alignment: .leading) {
+                                Text(location.name ?? "Unknown")
+                                    .font(.headline)
+                                HStack {
+                                    Text("\(location.lat)")
+                                    Text("\(location.long)")
+                                }
+                                .font(.subheadline)
+                            }
                         }
                     }
                 }

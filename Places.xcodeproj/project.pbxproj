@@ -36,6 +36,7 @@
 /* Begin PBXFileReference section */
 		9559E69E2C8E038D00AE9C9B /* WikipediaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaService.swift; sourceTree = "<group>"; };
 		9559E6A02C8E167700AE9C9B /* AddPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceView.swift; sourceTree = "<group>"; };
+		9559E6DA2C8E306900AE9C9B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		957002462C89EAC50067E000 /* Places.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Places.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		957002492C89EAC50067E000 /* PlacesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesApp.swift; sourceTree = "<group>"; };
 		9570024B2C89EAC50067E000 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 		9570023D2C89EAC50067E000 = {
 			isa = PBXGroup;
 			children = (
+				9559E6DA2C8E306900AE9C9B /* README.md */,
 				957002482C89EAC50067E000 /* Places */,
 				9570025B2C89EAC60067E000 /* PlacesTests */,
 				957002472C89EAC50067E000 /* Products */,
