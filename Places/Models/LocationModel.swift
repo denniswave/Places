@@ -19,5 +19,3 @@ struct LocationModel: Identifiable, Codable {
         case name, lat, long
     }
 }
-
-

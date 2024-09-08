@@ -16,7 +16,7 @@ struct ContentView: View {
             List {
                 ForEach(viewModel.locations) { location in
                     Button {
-
+                        WikipediaService().openWikipedia(onLatitude: location.lat, longitude: location.long)
                     } label: {
                         VStack(alignment: .leading) {
                             Text(location.name ?? "Unknown")

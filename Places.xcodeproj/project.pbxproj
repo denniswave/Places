@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9559E69F2C8E038D00AE9C9B /* WikipediaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9559E69E2C8E038D00AE9C9B /* WikipediaService.swift */; };
 		9570024A2C89EAC50067E000 /* PlacesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957002492C89EAC50067E000 /* PlacesApp.swift */; };
 		9570024C2C89EAC50067E000 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9570024B2C89EAC50067E000 /* ContentView.swift */; };
 		957002762C89ED840067E000 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957002752C89ED840067E000 /* LocationModel.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9559E69E2C8E038D00AE9C9B /* WikipediaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaService.swift; sourceTree = "<group>"; };
 		957002462C89EAC50067E000 /* Places.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Places.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		957002492C89EAC50067E000 /* PlacesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesApp.swift; sourceTree = "<group>"; };
 		9570024B2C89EAC50067E000 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				957002872C8A20D10067E000 /* LocationService.swift */,
+				9559E69E2C8E038D00AE9C9B /* WikipediaService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				957002912C8A2F5B0067E000 /* LocationsModel.swift in Sources */,
 				957002762C89ED840067E000 /* LocationModel.swift in Sources */,
 				9570028F2C8A2CDF0067E000 /* NetworkError.swift in Sources */,
+				9559E69F2C8E038D00AE9C9B /* WikipediaService.swift in Sources */,
 				9570027A2C8A014B0067E000 /* ErrorWrapper.swift in Sources */,
 				957002782C89FFAF0067E000 /* LocationViewModel.swift in Sources */,
 			);
@@ -421,7 +425,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Places/Places.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Places/Preview Content\"";
@@ -451,7 +454,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Places/Places.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Places/Preview Content\"";
