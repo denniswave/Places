@@ -19,37 +19,13 @@ struct ContentView: View {
             List {
                 Section {
                     ForEach(viewModel.locations) { location in
-                        Button {
-                            WikipediaService().openWikipedia(onLatitude: location.lat, longitude: location.long)
-                        } label: {
-                            VStack(alignment: .leading) {
-                                Text(location.name ?? "Unknown")
-                                    .font(.headline)
-                                HStack {
-                                    Text("\(location.lat)")
-                                    Text("\(location.long)")
-                                }
-                                .font(.subheadline)
-                            }
-                        }
+                        LocationButton(location: location)
                     }
                 }
                 
                 Section("My places") {
                     ForEach(storedLocations) { location in
-                        Button {
-                            WikipediaService().openWikipedia(onLatitude: location.lat, longitude: location.long)
-                        } label: {
-                            VStack(alignment: .leading) {
-                                Text(location.name ?? "Unknown")
-                                    .font(.headline)
-                                HStack {
-                                    Text("\(location.lat)")
-                                    Text("\(location.long)")
-                                }
-                                .font(.subheadline)
-                            }
-                        }
+                        LocationButton(location: location)
                     }
                 }
             }
@@ -60,19 +36,24 @@ struct ContentView: View {
                         isAddPlaceViewPresented = true
                     } label: {
                         Label("Add place", systemImage: "plus")
+                           
                     }
+                    .accessibilityLabel("Add a new place")
+                    .accessibilityHint("Double tap to add a new place to the list.")
                 }
             }
             .onAppear {
                 viewModel.fetchLocations()
             }
             .sheet(isPresented: $isAddPlaceViewPresented) {
-                AddPlaceView()
+                AddLocationView()
             }
             .alert(item: $viewModel.errorWrapper) { errorWrapper in
                 Alert(title: Text("Error"), message: Text(errorWrapper.message), dismissButton: .default(Text("OK")))
             }
         }
+        .accessibilityLabel("Places list")
+        .accessibilityHint("List of locations and a button to add a new one. Double tap on a location to open its Wikipedia page.")
     }
 }
 
